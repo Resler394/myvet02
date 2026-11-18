@@ -1,0 +1,309 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --brand-primary: #254222;
+  --brand-dark: #254222;
+  --brand-accent: #99CC66;
+
+  --brand-mint: #CAE4C5;
+  --brand-cream: #ECE2B1;
+  --brand-muted: #4A6644;
+
+  --background-main: #F7FAF4;
+  --background-white: #FFFFFF;
+
+  --text-primary: #254222;
+  --text-secondary: #4A6644;
+
+  --border-color: #CAE4C5;
+  --button-hover: #1B3219;
+
+  --shadow-soft: rgba(37, 66, 34, 0.08);
+  --overlay-dark: rgba(37, 66, 34, 0.35);
+}
+
+.dark,
+:root.dark {
+  --brand-primary: #99CC66;
+  --brand-dark: #F3F8F0;
+  --brand-accent: #99CC66;
+
+  --brand-mint: #CAE4C5;
+  --brand-cream: #ECE2B1;
+  --brand-muted: #CAE4C5;
+
+  --background-main: #162914;
+  --background-white: #254222;
+
+  --text-primary: #F3F8F0;
+  --text-secondary: #CAE4C5;
+
+  --border-color: #396035;
+  --button-hover: #A8D877;
+
+  --shadow-soft: rgba(0, 0, 0, 0.4);
+  --overlay-dark: rgba(0, 0, 0, 0.75);
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Noto Sans Arabic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F7FAF4;
+    color: #254222;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+.dark body {
+  background-color: #162914;
+  color: #F3F8F0;
+}
+
+/* Automatic Dark Mode Brand Mapping: Deep Forest Green (#254222) base + #99CC66 / #CAE4C5 / #ECE2B1 accents */
+.dark .bg-\[\#F7FAF4\] {
+  background-color: #1C3419 !important;
+}
+
+.dark .bg-white,
+.dark .bg-\[\#FFFFFF\] {
+  background-color: #254222 !important;
+}
+
+.dark .bg-white\/80 {
+  background-color: rgba(37, 66, 34, 0.85) !important;
+}
+
+.dark .bg-white\/95 {
+  background-color: rgba(37, 66, 34, 0.95) !important;
+}
+
+.dark .text-\[\#254222\] {
+  color: #F3F8F0 !important;
+}
+
+.dark .text-\[\#4A6644\] {
+  color: #CAE4C5 !important;
+}
+
+.dark .text-\[\#5E7F52\],
+.dark .text-\[\#3B5B35\] {
+  color: #99CC66 !important;
+}
+
+.dark .border-\[\#CAE4C5\],
+.dark .border-\[\#A7CEA0\] {
+  border-color: #396035 !important;
+}
+
+.dark .border-\[\#CAE4C5\]\/70 {
+  border-color: rgba(57, 96, 53, 0.75) !important;
+}
+
+.dark .border-\[\#254222\] {
+  border-color: #99CC66 !important;
+}
+
+.dark .border-t-\[\#254222\] {
+  border-top-color: #99CC66 !important;
+}
+
+.dark .border-x-\[\#CAE4C5\] {
+  border-left-color: #396035 !important;
+  border-right-color: #396035 !important;
+}
+
+.dark .bg-\[\#CAE4C5\]:not(.swatch-dot) {
+  background-color: #2E522A !important;
+  color: #CAE4C5 !important;
+}
+
+.dark .bg-\[\#CAE4C5\]\/20,
+.dark .bg-\[\#CAE4C5\]\/30,
+.dark .bg-\[\#CAE4C5\]\/35,
+.dark .bg-\[\#CAE4C5\]\/40,
+.dark .bg-\[\#CAE4C5\]\/50,
+.dark .bg-\[\#CAE4C5\]\/55,
+.dark .bg-\[\#CAE4C5\]\/60,
+.dark .bg-\[\#CAE4C5\]\/70 {
+  background-color: rgba(46, 82, 42, 0.55) !important;
+}
+
+.dark .bg-\[\#ECE2B1\]:not(.swatch-dot),
+.dark .bg-\[\#ECE2B1\]\/20,
+.dark .bg-\[\#ECE2B1\]\/40,
+.dark .bg-\[\#ECE2B1\]\/45,
+.dark .bg-\[\#ECE2B1\]\/50,
+.dark .bg-\[\#ECE2B1\]\/55,
+.dark .bg-\[\#ECE2B1\]\/60,
+.dark .bg-\[\#ECE2B1\]\/65,
+.dark .bg-\[\#ECE2B1\]\/70 {
+  background-color: #3C3B21 !important;
+  color: #ECE2B1 !important;
+}
+
+.dark .bg-\[\#ECE2B1\] .text-\[\#254222\],
+.dark .bg-\[\#ECE2B1\]\/55 .text-\[\#254222\],
+.dark .bg-\[\#ECE2B1\]\/60 .text-\[\#254222\],
+.dark .bg-\[\#ECE2B1\]\/65 .text-\[\#254222\],
+.dark .bg-\[\#ECE2B1\]\/70 .text-\[\#254222\],
+.dark .bg-\[\#ECE2B1\] .text-\[\#4A6644\],
+.dark .bg-\[\#ECE2B1\]\/60 .text-\[\#4A6644\],
+.dark .bg-\[\#ECE2B1\]\/70 .text-\[\#4A6644\] {
+  color: #ECE2B1 !important;
+}
+
+.dark .border-\[\#ECE2B1\] {
+  border-color: #6B6535 !important;
+}
+
+/* Dark Mode Semantic Alert & Status Surfaces */
+.dark .bg-\[\#FEF2F2\],
+.dark .bg-\[\#FEF2F2\]\/60,
+.dark .bg-\[\#FDF2F0\],
+.dark .bg-\[\#FDF2F0\]\/60,
+.dark .bg-red-50 {
+  background-color: rgba(127, 29, 29, 0.28) !important;
+}
+
+.dark .bg-\[\#FEE2E2\],
+.dark .bg-red-100 {
+  background-color: rgba(153, 27, 27, 0.45) !important;
+}
+
+.dark .border-\[\#FECDD3\],
+.dark .border-\[\#FECDD3\]\/50,
+.dark .border-\[\#E8B4B8\] {
+  border-color: rgba(248, 113, 113, 0.35) !important;
+}
+
+.dark .text-\[\#991B1B\],
+.dark .text-\[\#7A1E1F\],
+.dark .text-\[\#9E2A2B\],
+.dark .text-\[\#DC2626\],
+.dark .text-red-600,
+.dark .text-red-700 {
+  color: #FCA5A5 !important;
+}
+
+.dark .text-amber-600,
+.dark .text-amber-700 {
+  color: #FCD34D !important;
+}
+
+.dark .bg-\[\#EFF6FF\] {
+  background-color: rgba(30, 58, 138, 0.35) !important;
+}
+
+.dark .border-\[\#BFDBFE\] {
+  border-color: rgba(96, 165, 250, 0.35) !important;
+}
+
+.dark .text-\[\#1E40AF\] {
+  color: #93C5FD !important;
+}
+
+.dark .bg-\[\#254222\]:not(.swatch-dot):not(.no-invert) {
+  background-color: #99CC66 !important;
+  color: #254222 !important;
+}
+
+.dark .bg-\[\#254222\]:not(.swatch-dot):not(.no-invert) * {
+  color: #254222 !important;
+}
+
+.dark .hover\:bg-\[\#1B3219\]:hover {
+  background-color: #A8D877 !important;
+}
+
+.dark .bg-\[\#99CC66\],
+.dark .bg-\[\#99CC66\] * {
+  color: #254222 !important;
+}
+
+.dark .bg-\[\#99CC66\]\/35 {
+  background-color: rgba(153, 204, 102, 0.22) !important;
+  color: #CAE4C5 !important;
+  border-color: rgba(153, 204, 102, 0.45) !important;
+}
+
+.dark .hover\:bg-\[\#F7FAF4\]:hover,
+.dark .hover\:bg-\[\#F7FAF4\]\/60:hover {
+  background-color: #2E522A !important;
+}
+
+.dark .hover\:bg-\[\#CAE4C5\]:hover,
+.dark .hover\:bg-\[\#CAE4C5\]\/40:hover,
+.dark .hover\:bg-\[\#CAE4C5\]\/50:hover {
+  background-color: #345C30 !important;
+}
+
+.dark .divide-\[\#CAE4C5\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #396035 !important;
+}
+
+.dark .divide-\[\#ECE2B1\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #6B6535 !important;
+}
+
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark textarea,
+.dark select {
+  background-color: #1A3118 !important;
+  color: #F3F8F0 !important;
+  border-color: #396035 !important;
+}
+
+.dark input:not([type="checkbox"]):not([type="radio"]):focus,
+.dark textarea:focus,
+.dark select:focus {
+  background-color: #1F391C !important;
+  border-color: #99CC66 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #88AE83 !important;
+}
+
+.font-brand-script {
+  font-family: 'Caveat', cursive, sans-serif;
+}
+
+/* Custom scrollbar matching My Vet botanical theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CAE4C5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #99CC66;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #396035;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #99CC66;
+}
+
+/* Printable prescription pad styles */
+@media print {
+  body {
+    background-color: #ffffff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
